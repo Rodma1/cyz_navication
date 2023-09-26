@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.CyzNavigateSiteMapper">
+    
+    <resultMap type="CyzNavigateSite" id="CyzNavigateSiteResult">
+        <result property="id"    column="id"    />
+        <result property="categoryId"    column="category_id"    />
+        <result property="name"    column="name"    />
+        <result property="image"    column="image"    />
+        <result property="description"    column="description"    />
+        <result property="url"    column="url"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="updateBy"    column="update_by"    />
+    </resultMap>
+
+    <sql id="selectCyzNavigateSiteVo">
+        select id, category_id, name, image, description, url, create_time, update_time, create_by, update_by from cyz_navigate_site
+    </sql>
+
+    <select id="selectCyzNavigateSiteList" parameterType="CyzNavigateSite" resultMap="CyzNavigateSiteResult">
+        <include refid="selectCyzNavigateSiteVo"/>
+        <where>  
+            <if test="categoryId != null "> and category_id = #{categoryId}</if>
+            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
+            <if test="image != null  and image != ''"> and image = #{image}</if>
+            <if test="description != null  and description != ''"> and description = #{description}</if>
+            <if test="url != null  and url != ''"> and url = #{url}</if>
+        </where>
+    </select>
+    
+    <select id="selectCyzNavigateSiteById" parameterType="Long" resultMap="CyzNavigateSiteResult">
+        <include refid="selectCyzNavigateSiteVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertCyzNavigateSite" parameterType="CyzNavigateSite" useGeneratedKeys="true" keyProperty="id">
+        insert into cyz_navigate_site
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="categoryId != null">category_id,</if>
+            <if test="name != null">name,</if>
+            <if test="image != null">image,</if>
+            <if test="description != null">description,</if>
+            <if test="url != null">url,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="updateBy != null">update_by,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="categoryId != null">#{categoryId},</if>
+            <if test="name != null">#{name},</if>
+            <if test="image != null">#{image},</if>
+            <if test="description != null">#{description},</if>
+            <if test="url != null">#{url},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+         </trim>
+    </insert>
+
+    <update id="updateCyzNavigateSite" parameterType="CyzNavigateSite">
+        update cyz_navigate_site
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="categoryId != null">category_id = #{categoryId},</if>
+            <if test="name != null">name = #{name},</if>
+            <if test="image != null">image = #{image},</if>
+            <if test="description != null">description = #{description},</if>
+            <if test="url != null">url = #{url},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteCyzNavigateSiteById" parameterType="Long">
+        delete from cyz_navigate_site where id = #{id}
+    </delete>
+
+    <delete id="deleteCyzNavigateSiteByIds" parameterType="String">
+        delete from cyz_navigate_site where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>
