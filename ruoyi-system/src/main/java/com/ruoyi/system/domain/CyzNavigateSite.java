@@ -40,6 +40,10 @@ public class CyzNavigateSite extends BaseEntity
     @Excel(name = "网站路径")
     private String url;
 
+    /** 网站路径 */
+    @Excel(name = "删除标志(0代表存在 1代表删除)")
+    private String delFlag;
+
 
     private List<CyzNavigateCategory> siteCategory;
 
@@ -98,6 +102,16 @@ public class CyzNavigateSite extends BaseEntity
         return url;
     }
 
+    public void setDelFlag(String delFlag)
+    {
+        this.delFlag = delFlag;
+    }
+
+    public String getDelFlag()
+    {
+        return delFlag;
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
@@ -111,6 +125,7 @@ public class CyzNavigateSite extends BaseEntity
             .append("updateTime", getUpdateTime())
             .append("createBy", getCreateBy())
             .append("updateBy", getUpdateBy())
+            .append("delFlag", getUpdateBy())
             .toString();
     }
 }
