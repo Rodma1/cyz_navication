@@ -19,13 +19,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </resultMap>
 
     <sql id="selectCyzNavigateSiteVo">
-        select id, category_id, name, image, description, url, create_time, update_time, create_by, update_by from cyz_navigate_site
+        select site.id, category_id, site.name,cate.name as categoryName,image, description, url, site.create_time, site.update_time, create_by, update_by from cyz_navigate_site as site left join cyz_navigate_category as cate on site.category_id = cate.id
     </sql>
 
     <select id="selectCyzNavigateSiteList" parameterType="CyzNavigateSite" resultMap="CyzNavigateSiteResult">
         <include refid="selectCyzNavigateSiteVo"/>
         <where>
-            and del_flag = '0'
+            and site.del_flag = '0'
             <if test="categoryId != null "> and category_id = #{categoryId}</if>
             <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
             <if test="image != null  and image != ''"> and image = #{image}</if>
@@ -36,7 +36,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
     <select id="selectCyzNavigateSiteById" parameterType="Long" resultMap="CyzNavigateSiteResult">
         <include refid="selectCyzNavigateSiteVo"/>
-        where id = #{id} and del_flag = '0'
+        where site.id = #{id} and site.del_flag = '0'
     </select>
 
     <insert id="insertCyzNavigateSite" parameterType="CyzNavigateSite" useGeneratedKeys="true" keyProperty="id">
@@ -51,6 +51,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="updateTime != null">update_time,</if>
             <if test="createBy != null">create_by,</if>
             <if test="updateBy != null">update_by,</if>
+            <if test="delFlag != null">del_flag,</if>
          </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="categoryId != null">#{categoryId},</if>
@@ -62,6 +63,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="updateTime != null">#{updateTime},</if>
             <if test="createBy != null">#{createBy},</if>
             <if test="updateBy != null">#{updateBy},</if>
+            <if test="delFlag != null">#{delFlag},</if>
          </trim>
     </insert>
 

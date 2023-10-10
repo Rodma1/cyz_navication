@@ -10,19 +10,19 @@ import com.ruoyi.system.service.ICyzNavigateCategoryService;
 
 /**
  * 神的孩子都在歌唱Service业务层处理
- * 
+ *
  * @author 神的孩子都在歌唱
  * @date 2023-09-26
  */
 @Service
-public class CyzNavigateCategoryServiceImpl implements ICyzNavigateCategoryService 
+public class CyzNavigateCategoryServiceImpl implements ICyzNavigateCategoryService
 {
     @Autowired
     private CyzNavigateCategoryMapper cyzNavigateCategoryMapper;
 
     /**
      * 查询神的孩子都在歌唱
-     * 
+     *
      * @param id 神的孩子都在歌唱主键
      * @return 神的孩子都在歌唱
      */
@@ -34,7 +34,7 @@ public class CyzNavigateCategoryServiceImpl implements ICyzNavigateCategoryServi
 
     /**
      * 查询神的孩子都在歌唱列表
-     * 
+     *
      * @param cyzNavigateCategory 神的孩子都在歌唱
      * @return 神的孩子都在歌唱
      */
@@ -46,7 +46,7 @@ public class CyzNavigateCategoryServiceImpl implements ICyzNavigateCategoryServi
 
     /**
      * 新增神的孩子都在歌唱
-     * 
+     *
      * @param cyzNavigateCategory 神的孩子都在歌唱
      * @return 结果
      */
@@ -54,12 +54,13 @@ public class CyzNavigateCategoryServiceImpl implements ICyzNavigateCategoryServi
     public int insertCyzNavigateCategory(CyzNavigateCategory cyzNavigateCategory)
     {
         cyzNavigateCategory.setCreateTime(DateUtils.getNowDate());
+        cyzNavigateCategory.setDelFlag("0");
         return cyzNavigateCategoryMapper.insertCyzNavigateCategory(cyzNavigateCategory);
     }
 
     /**
      * 修改神的孩子都在歌唱
-     * 
+     *
      * @param cyzNavigateCategory 神的孩子都在歌唱
      * @return 结果
      */
@@ -72,7 +73,7 @@ public class CyzNavigateCategoryServiceImpl implements ICyzNavigateCategoryServi
 
     /**
      * 批量删除神的孩子都在歌唱
-     * 
+     *
      * @param ids 需要删除的神的孩子都在歌唱主键
      * @return 结果
      */
@@ -84,7 +85,7 @@ public class CyzNavigateCategoryServiceImpl implements ICyzNavigateCategoryServi
 
     /**
      * 删除神的孩子都在歌唱信息
-     * 
+     *
      * @param id 神的孩子都在歌唱主键
      * @return 结果
      */

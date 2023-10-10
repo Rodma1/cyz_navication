@@ -24,6 +24,9 @@ public class CyzNavigateSite extends BaseEntity
     @Excel(name = "类别id")
     private Long categoryId;
 
+    /** 类别名称 */
+    private String categoryName;
+
     /** 网站标题 */
     @Excel(name = "网站标题")
     private String name;
@@ -110,6 +113,16 @@ public class CyzNavigateSite extends BaseEntity
     public String getDelFlag()
     {
         return delFlag;
+    }
+
+    public void setCategoryName(String categoryName)
+    {
+        this.categoryName = categoryName;
+    }
+
+    public String getCategoryName()
+    {
+        return categoryName;
     }
 
     @Override

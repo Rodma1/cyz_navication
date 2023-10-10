@@ -2,18 +2,21 @@ package com.ruoyi.system.mapper;
 
 import java.util.List;
 import com.ruoyi.system.domain.CyzNavigateCategory;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 /**
  * 神的孩子都在歌唱Mapper接口
- * 
+ *
  * @author 神的孩子都在歌唱
  * @date 2023-09-26
  */
-public interface CyzNavigateCategoryMapper 
+@Repository
+public interface CyzNavigateCategoryMapper
 {
     /**
      * 查询神的孩子都在歌唱
-     * 
+     *
      * @param id 神的孩子都在歌唱主键
      * @return 神的孩子都在歌唱
      */
@@ -21,7 +24,7 @@ public interface CyzNavigateCategoryMapper
 
     /**
      * 查询神的孩子都在歌唱列表
-     * 
+     *
      * @param cyzNavigateCategory 神的孩子都在歌唱
      * @return 神的孩子都在歌唱集合
      */
@@ -29,7 +32,7 @@ public interface CyzNavigateCategoryMapper
 
     /**
      * 新增神的孩子都在歌唱
-     * 
+     *
      * @param cyzNavigateCategory 神的孩子都在歌唱
      * @return 结果
      */
@@ -37,7 +40,7 @@ public interface CyzNavigateCategoryMapper
 
     /**
      * 修改神的孩子都在歌唱
-     * 
+     *
      * @param cyzNavigateCategory 神的孩子都在歌唱
      * @return 结果
      */
@@ -45,7 +48,7 @@ public interface CyzNavigateCategoryMapper
 
     /**
      * 删除神的孩子都在歌唱
-     * 
+     *
      * @param id 神的孩子都在歌唱主键
      * @return 结果
      */
@@ -53,7 +56,7 @@ public interface CyzNavigateCategoryMapper
 
     /**
      * 批量删除神的孩子都在歌唱
-     * 
+     *
      * @param ids 需要删除的数据主键集合
      * @return 结果
      */

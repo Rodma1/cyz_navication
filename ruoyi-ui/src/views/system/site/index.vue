@@ -55,8 +55,8 @@
 
     <el-table v-loading="loading" :data="siteList" @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55" align="center" />
-      <el-table-column label="${comment}" align="center" prop="id" />
-      <el-table-column label="类别id" align="center" prop="categoryId" />
+      <el-table-column label="网站id" align="center" prop="id" />
+      <el-table-column label="类别名称" align="center" prop="categoryName" />
       <el-table-column label="网站标题" align="center" prop="name" />
       <el-table-column label="图片" align="center" prop="image" width="100">
         <template slot-scope="scope">
@@ -163,6 +163,7 @@ export default {
         image: null,
         description: null,
         url: null,
+        categoryName: null
       },
       // 表单参数
       form: {},

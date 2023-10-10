@@ -2,18 +2,21 @@ package com.ruoyi.system.mapper;
 
 import java.util.List;
 import com.ruoyi.system.domain.CyzNavigateSite;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 /**
  * 导航网站Mapper接口
- * 
+ *
  * @author ruoyi
  * @date 2023-09-26
  */
-public interface CyzNavigateSiteMapper 
+@Repository
+public interface CyzNavigateSiteMapper
 {
     /**
      * 查询导航网站
-     * 
+     *
      * @param id 导航网站主键
      * @return 导航网站
      */
@@ -21,7 +24,7 @@ public interface CyzNavigateSiteMapper
 
     /**
      * 查询导航网站列表
-     * 
+     *
      * @param cyzNavigateSite 导航网站
      * @return 导航网站集合
      */
@@ -29,7 +32,7 @@ public interface CyzNavigateSiteMapper
 
     /**
      * 新增导航网站
-     * 
+     *
      * @param cyzNavigateSite 导航网站
      * @return 结果
      */
@@ -37,7 +40,7 @@ public interface CyzNavigateSiteMapper
 
     /**
      * 修改导航网站
-     * 
+     *
      * @param cyzNavigateSite 导航网站
      * @return 结果
      */
@@ -45,7 +48,7 @@ public interface CyzNavigateSiteMapper
 
     /**
      * 删除导航网站
-     * 
+     *
      * @param id 导航网站主键
      * @return 结果
      */
@@ -53,7 +56,7 @@ public interface CyzNavigateSiteMapper
 
     /**
      * 批量删除导航网站
-     * 
+     *
      * @param ids 需要删除的数据主键集合
      * @return 结果
      */

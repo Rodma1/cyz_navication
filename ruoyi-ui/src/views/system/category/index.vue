@@ -4,7 +4,7 @@
       <el-form-item label="${comment}" prop="id">
         <el-input
           v-model="queryParams.id"
-          placeholder="请输入${comment}"
+          placeholder="请输入id"
           clearable
           @keyup.enter.native="handleQuery"
         />

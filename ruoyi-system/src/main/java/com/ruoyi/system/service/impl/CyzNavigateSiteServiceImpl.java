@@ -1,7 +1,13 @@
 package com.ruoyi.system.service.impl;
 
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
 import com.ruoyi.common.utils.DateUtils;
+import com.ruoyi.system.domain.CyzNavigateCategory;
+import com.ruoyi.system.mapper.CyzNavigateCategoryMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.ruoyi.system.mapper.CyzNavigateSiteMapper;
@@ -10,19 +16,19 @@ import com.ruoyi.system.service.ICyzNavigateSiteService;
 
 /**
  * 导航网站Service业务层处理
- * 
+ *
  * @author ruoyi
  * @date 2023-09-26
  */
 @Service
-public class CyzNavigateSiteServiceImpl implements ICyzNavigateSiteService 
+public class CyzNavigateSiteServiceImpl implements ICyzNavigateSiteService
 {
     @Autowired
     private CyzNavigateSiteMapper cyzNavigateSiteMapper;
 
     /**
      * 查询导航网站
-     * 
+     *
      * @param id 导航网站主键
      * @return 导航网站
      */
@@ -34,7 +40,7 @@ public class CyzNavigateSiteServiceImpl implements ICyzNavigateSiteService
 
     /**
      * 查询导航网站列表
-     * 
+     *
      * @param cyzNavigateSite 导航网站
      * @return 导航网站
      */
@@ -46,7 +52,7 @@ public class CyzNavigateSiteServiceImpl implements ICyzNavigateSiteService
 
     /**
      * 新增导航网站
-     * 
+     *
      * @param cyzNavigateSite 导航网站
      * @return 结果
      */
@@ -54,12 +60,13 @@ public class CyzNavigateSiteServiceImpl implements ICyzNavigateSiteService
     public int insertCyzNavigateSite(CyzNavigateSite cyzNavigateSite)
     {
         cyzNavigateSite.setCreateTime(DateUtils.getNowDate());
+        cyzNavigateSite.setDelFlag("0");
         return cyzNavigateSiteMapper.insertCyzNavigateSite(cyzNavigateSite);
     }
 
     /**
      * 修改导航网站
-     * 
+     *
      * @param cyzNavigateSite 导航网站
      * @return 结果
      */
@@ -72,7 +79,7 @@ public class CyzNavigateSiteServiceImpl implements ICyzNavigateSiteService
 
     /**
      * 批量删除导航网站
-     * 
+     *
      * @param ids 需要删除的导航网站主键
      * @return 结果
      */
@@ -84,7 +91,7 @@ public class CyzNavigateSiteServiceImpl implements ICyzNavigateSiteService
 
     /**
      * 删除导航网站信息
-     * 
+     *
      * @param id 导航网站主键
      * @return 结果
      */
