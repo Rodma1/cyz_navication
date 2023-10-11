@@ -126,7 +126,7 @@ public class FileUploadUtils
                 FilenameUtils.getBaseName(file.getOriginalFilename()), Seq.getId(Seq.uploadSeqType), getExtension(file));
     }
 
-    public static final File getAbsoluteFile(String uploadDir, String fileName) throws IOException
+    public static final File getAbsoluteFile(String uploadDir, String fileName)
     {
         File desc = new File(uploadDir + File.separator + fileName);
 

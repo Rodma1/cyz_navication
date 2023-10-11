@@ -29,6 +29,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
             <if test="icon != null  and icon != ''"> and icon = #{icon}</if>
         </where>
+        order by id desc
     </select>
 
     <select id="selectCyzNavigateCategoryById" parameterType="Long" resultMap="CyzNavigateCategoryResult">

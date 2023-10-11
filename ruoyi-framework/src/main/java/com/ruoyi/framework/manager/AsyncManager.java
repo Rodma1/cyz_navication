@@ -8,7 +8,7 @@ import com.ruoyi.common.utils.spring.SpringUtils;
 
 /**
  * 异步任务管理器
- * 
+ *
  * @author ruoyi
  */
 public class AsyncManager
@@ -37,13 +37,15 @@ public class AsyncManager
 
     /**
      * 执行任务
-     * 
+     *
      * @param task 任务
      */
     public void execute(TimerTask task)
     {
         executor.schedule(task, OPERATE_DELAY_TIME, TimeUnit.MILLISECONDS);
     }
+
+
 
     /**
      * 停止任务线程池

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 读取项目相关配置
- * 
+ *
  * @author ruoyi
  */
 @Component
@@ -32,6 +32,9 @@ public class RuoYiConfig
 
     /** 验证码类型 */
     private static String captchaType;
+
+    /** 上传路径 */
+    private static String websiteInfo;
 
     public String getName()
     {
@@ -83,6 +86,16 @@ public class RuoYiConfig
         RuoYiConfig.profile = profile;
     }
 
+
+    public static String getWebsiteInfo()
+    {
+        return websiteInfo;
+    }
+
+    public void setWebsiteInfo(String websiteInfo)
+    {
+        RuoYiConfig.websiteInfo = websiteInfo;
+    }
     public static boolean isAddressEnabled()
     {
         return addressEnabled;

@@ -25,13 +25,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <select id="selectCyzNavigateSiteList" parameterType="CyzNavigateSite" resultMap="CyzNavigateSiteResult">
         <include refid="selectCyzNavigateSiteVo"/>
         <where>
-            and site.del_flag = '0'
+            site.del_flag = '0'
             <if test="categoryId != null "> and category_id = #{categoryId}</if>
             <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
             <if test="image != null  and image != ''"> and image = #{image}</if>
             <if test="description != null  and description != ''"> and description = #{description}</if>
             <if test="url != null  and url != ''"> and url = #{url}</if>
         </where>
+        order by site.id desc
     </select>
 
     <select id="selectCyzNavigateSiteById" parameterType="Long" resultMap="CyzNavigateSiteResult">
