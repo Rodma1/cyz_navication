@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 ## 修改说明
 1. **此项目对应sql文件只需执行前两个. 为** 
    1. **[postgresql.sql](https://gitee.com/suxia2/RuoYi-Vue-Postgresql/blob/master/sql/postgresql.sql)**
