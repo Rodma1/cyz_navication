@@ -136,7 +136,7 @@ export default {
     return {
       // 遮罩层
       loading: true,
-      // 神的孩子都在歌唱树选项
+      // 树选项
       categories: [],
       // 选中数组
       ids: [],
@@ -185,7 +185,7 @@ export default {
         this.loading = false;
       });
     },
-    /** 查询神的孩子都在歌唱下拉树结构 */
+    /** 查询下拉树结构 */
     getTreeselect() {
       listCategory().then(response => {
         this.categories = [];
@@ -195,7 +195,7 @@ export default {
         this.categories.push(data);
       });
     },
-    /** 转换神的孩子都在歌唱数据结构 */
+    /** 转换数据结构 */
     normalizer(node) {
       if (node.children && !node.children.length) {
         delete node.children;

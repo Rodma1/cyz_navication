@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询神的孩子都在歌唱列表
+// 查询列表
 export function listCategory(query) {
   return request({
     url: '/system/category/list',
@@ -9,7 +9,7 @@ export function listCategory(query) {
   })
 }
 
-// 查询神的孩子都在歌唱详细
+// 查询详细
 export function getCategory(id) {
   return request({
     url: '/system/category/' + id,
@@ -17,7 +17,7 @@ export function getCategory(id) {
   })
 }
 
-// 新增神的孩子都在歌唱
+// 新增
 export function addCategory(data) {
   return request({
     url: '/system/category',
@@ -26,7 +26,7 @@ export function addCategory(data) {
   })
 }
 
-// 修改神的孩子都在歌唱
+// 修改
 export function updateCategory(data) {
   return request({
     url: '/system/category',

@@ -182,7 +182,7 @@ export default {
         children: node.children
       };
     },
-	/** 查询神的孩子都在歌唱下拉树结构 */
+	/** 查询下拉树结构 */
     getTreeselect() {
       listCategory().then(response => {
         this.categoryOptions = [];
@@ -230,7 +230,7 @@ export default {
         this.form.parentId = 0;
       }
       this.open = true;
-      this.title = "添加神的孩子都在歌唱";
+      this.title = "添加";
     },
     /** 展开/折叠操作 */
     toggleExpandAll() {
@@ -250,7 +250,7 @@ export default {
       getCategory(row.id).then(response => {
         this.form = response.data;
         this.open = true;
-        this.title = "修改神的孩子都在歌唱";
+        this.title = "修改";
       });
     },
     /** 提交按钮 */
@@ -275,7 +275,7 @@ export default {
     },
     /** 删除按钮操作 */
     handleDelete(row) {
-      this.$modal.confirm('是否确认删除神的孩子都在歌唱编号为"' + row.id + '"的数据项？').then(function() {
+      this.$modal.confirm('是否确认删除编号为"' + row.id + '"的数据项？').then(function() {
         return delCategory(row.id);
       }).then(() => {
         this.getList();

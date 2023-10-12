@@ -7,7 +7,7 @@ function resolve(dir) {
 
 const CompressionPlugin = require('compression-webpack-plugin')
 
-const name = process.env.VUE_APP_TITLE || '若依管理系统' // 网页标题
+const name = process.env.VUE_APP_TITLE || '神的孩子都在歌唱' // 网页标题
 
 const port = process.env.port || process.env.npm_config_port || 81 // 端口
 
@@ -32,6 +32,7 @@ module.exports = {
     host: '0.0.0.0',
     port: 8081,
     open: true,
+    https: false,// https:{type:Boolean}是否启用https
     proxy: {
       // detail: https://cli.vuejs.org/config/#devserver-proxy
       [process.env.VUE_APP_BASE_API]: {
