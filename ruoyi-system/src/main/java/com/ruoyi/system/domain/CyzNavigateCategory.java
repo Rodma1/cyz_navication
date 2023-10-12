@@ -6,7 +6,7 @@ import com.ruoyi.common.annotation.Excel;
 import com.ruoyi.common.core.domain.TreeEntity;
 
 /**
- * 神的孩子都在歌唱对象 cyz_navigate_category
+ * 对象 cyz_navigate_category
  *
  * @author 神的孩子都在歌唱
  * @date 2023-09-26

@@ -21,7 +21,7 @@ import com.ruoyi.system.service.ICyzNavigateCategoryService;
 import com.ruoyi.common.utils.poi.ExcelUtil;
 
 /**
- * 神的孩子都在歌唱Controller
+ * Controller
  *
  * @author 神的孩子都在歌唱
  * @date 2023-09-26
@@ -34,7 +34,7 @@ public class CyzNavigateCategoryController extends BaseController
     private ICyzNavigateCategoryService cyzNavigateCategoryService;
 
     /**
-     * 查询神的孩子都在歌唱列表
+     * 查询列表
      */
     @PreAuthorize("@ss.hasPermi('system:category:list')")
     @GetMapping("/list")
@@ -45,7 +45,7 @@ public class CyzNavigateCategoryController extends BaseController
     }
 
     /**
-     * 导出神的孩子都在歌唱列表
+     * 导出列表
      */
     @PreAuthorize("@ss.hasPermi('system:category:export')")
     @Log(title = "神的孩子都在歌唱", businessType = BusinessType.EXPORT)
@@ -58,7 +58,7 @@ public class CyzNavigateCategoryController extends BaseController
     }
 
     /**
-     * 获取神的孩子都在歌唱详细信息
+     * 获取详细信息
      */
     @PreAuthorize("@ss.hasPermi('system:category:query')")
     @GetMapping(value = "/{id}")
@@ -68,7 +68,7 @@ public class CyzNavigateCategoryController extends BaseController
     }
 
     /**
-     * 新增神的孩子都在歌唱
+     * 新增
      */
     @PreAuthorize("@ss.hasPermi('system:category:add')")
     @Log(title = "神的孩子都在歌唱", businessType = BusinessType.INSERT)
@@ -79,7 +79,7 @@ public class CyzNavigateCategoryController extends BaseController
     }
 
     /**
-     * 修改神的孩子都在歌唱
+     * 修改
      */
     @PreAuthorize("@ss.hasPermi('system:category:edit')")
     @Log(title = "神的孩子都在歌唱", businessType = BusinessType.UPDATE)
@@ -90,7 +90,7 @@ public class CyzNavigateCategoryController extends BaseController
     }
 
     /**
-     * 删除神的孩子都在歌唱
+     * 删除
      */
     @PreAuthorize("@ss.hasPermi('system:category:remove')")
     @Log(title = "神的孩子都在歌唱", businessType = BusinessType.DELETE)

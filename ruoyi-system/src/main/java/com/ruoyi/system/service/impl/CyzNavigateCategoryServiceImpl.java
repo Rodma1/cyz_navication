@@ -9,7 +9,7 @@ import com.ruoyi.system.domain.CyzNavigateCategory;
 import com.ruoyi.system.service.ICyzNavigateCategoryService;
 
 /**
- * 神的孩子都在歌唱Service业务层处理
+ * Service业务层处理
  *
  * @author 神的孩子都在歌唱
  * @date 2023-09-26
@@ -21,7 +21,7 @@ public class CyzNavigateCategoryServiceImpl implements ICyzNavigateCategoryServi
     private CyzNavigateCategoryMapper cyzNavigateCategoryMapper;
 
     /**
-     * 查询神的孩子都在歌唱
+     * 查询
      *
      * @param id 神的孩子都在歌唱主键
      * @return 神的孩子都在歌唱
@@ -33,9 +33,9 @@ public class CyzNavigateCategoryServiceImpl implements ICyzNavigateCategoryServi
     }
 
     /**
-     * 查询神的孩子都在歌唱列表
+     * 查询列表
      *
-     * @param cyzNavigateCategory 神的孩子都在歌唱
+     * @param cyzNavigateCategory
      * @return 神的孩子都在歌唱
      */
     @Override
@@ -45,9 +45,9 @@ public class CyzNavigateCategoryServiceImpl implements ICyzNavigateCategoryServi
     }
 
     /**
-     * 新增神的孩子都在歌唱
+     * 新增
      *
-     * @param cyzNavigateCategory 神的孩子都在歌唱
+     * @param cyzNavigateCategory
      * @return 结果
      */
     @Override
@@ -59,9 +59,9 @@ public class CyzNavigateCategoryServiceImpl implements ICyzNavigateCategoryServi
     }
 
     /**
-     * 修改神的孩子都在歌唱
+     * 修改
      *
-     * @param cyzNavigateCategory 神的孩子都在歌唱
+     * @param cyzNavigateCategory
      * @return 结果
      */
     @Override
@@ -74,7 +74,7 @@ public class CyzNavigateCategoryServiceImpl implements ICyzNavigateCategoryServi
     /**
      * 批量删除神的孩子都在歌唱
      *
-     * @param ids 需要删除的神的孩子都在歌唱主键
+     * @param ids 需要删除的主键
      * @return 结果
      */
     @Override
@@ -84,9 +84,9 @@ public class CyzNavigateCategoryServiceImpl implements ICyzNavigateCategoryServi
     }
 
     /**
-     * 删除神的孩子都在歌唱信息
+     * 删除信息
      *
-     * @param id 神的孩子都在歌唱主键
+     * @param id 主键
      * @return 结果
      */
     @Override
