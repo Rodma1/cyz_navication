@@ -34,9 +34,9 @@ def get_logo_url(url):
                 logo_url = urljoin(url, logo_url)
             # 确保logo_url是一个有效URL
             if not parsed_url.netloc:
-                logo_url = '未找到Logo'
+                logo_url = url + '/favicon.ico'
         else:
-            logo_url = '未找到Logo'
+            logo_url = url + '/favicon.ico'
         return logo_url
     except Exception as e:
         return None
